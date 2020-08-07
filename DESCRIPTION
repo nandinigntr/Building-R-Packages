@@ -1,0 +1,15 @@
+Package: TestPackage
+Type: Package
+Title: Building R Package Assignment
+Version: 0.1.0
+Author: Nandini Guntur <nandinigntr4@gmail.com>
+Maintainer: Nandini Guntur <nandinigntr4@gmail.com>
+Description: Functions to interact with data from the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System
+License: GPL
+Encoding: UTF-8
+LazyData: true
+Depends: R (>3.3.1)
+RoxygenNote: 6.0.1
+Depends: dplyr,readr,graphics,maps,tidyr
+Suggests: knitr, markdown, testhat
+VignetteBuilder: knitr
