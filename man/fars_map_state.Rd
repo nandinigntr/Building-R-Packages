@@ -2,34 +2,36 @@
 % Please edit documentation in R/fars_functions.R
 \name{fars_map_state}
 \alias{fars_map_state}
-\title{Plots points where accidents for given state.num}
+\title{Plot the location of accidents in a given state and year}
 \usage{
-  fars_map_state(state.num, year)
+fars_map_state(state.num, year)
 }
 \arguments{
-  \item{state.num}{state number to plot accidents for}
+\item{state.num}{An integer that represents the state number.}
 
-  \item{year}{year of data to plot accidents that occured}
+\item{year}{An integer or string indicating the year.}
 }
 \value{
-  a data.frame of filtered data, if there are no rows then returns invisible(NULL)
+Plots a map of the state, where the fatalities are the dots on the map.
 }
 \description{
-  \code{fars_map_state} plots the state given as an integer
-  argument and plots accidents for a given year
+\code{fars_map_state} is a function that creates a map with the fatalities in a US State
+during a year according to the Fatality Analysis Reporting System (FARS) database.
 }
 \details{
-  The function will take a year and state and attempt to plot accidents for a given state number.
-  If there is no data for a state, the function will stop and throw an error. If there are no accidents
-  a message will be returning indicating this.
+This function takes the state number and a year as inputs and calls the supporting
+   functions \code{make_filename()} and \code{fars_read()}.
 }
 \note{
-  This function depends on map and points functions from the maps and graphics package respectively.
+The \code{state.num} parameter of this function must be an integer or a string with
+   number. This function stops execution with an error message if \code{state.num} is
+   invalid. If there hasn't been any accident in that year, this function produces a message.
 }
 \examples{
-  \dontrun{
-    fars_map_state(1, 2013)
-  }
-
+\dontrun{
+fars_map_state(30, 2013)
+fars_map_state(56, 2013)
+fars_map_state(70, 2014) ## Error: "invalid STATE number: 70"
+}
 
 }

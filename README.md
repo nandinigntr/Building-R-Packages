@@ -1,12 +1,38 @@
-# Building-R-Packages
+---
+title: "README"
+author: "Nandini Guntur"
+date: "08/07/2020"
+---
 
-For this assignment you'll submit a link to the GitHub repository which contains your package. This assessment will ask reviewers the following questions:
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
 
-1. Does this package contain the correct R file(s) under the R/ directory?
-2. Does this package contain a man/ directory with corresponding documentation files?
-3. Does this package contain a vignette which provides a meaningful description of the package and how it should be used?
-4. Does this package have at least one test included in the tests/ directory?
-5. Does this package have a NAMESPACE file?
-6. Does the README.md file for this directory have a Travis badge?
-7. Is the build of this package passing on Travis?
-8. Are the build logs for this package on Travis free of any errors, warnings, or notes?
+# FARS.functions
+
+This package is the final assignment of the course "Building R Packages" from Coursera. It contains functions to map the data from the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System (FARS).
+
+At this repository you will find:
+
+1. A DESCRIPTION and NAMESPACE file;
+2. An R/ folder where the fars_functions.R are stored;
+3. A man/ folder presenting the functions documented using ```roxygen2``` package;
+4. A vignettes/ folder which includes a meaningful description of the package and some examples.
+5. A tests/ folder with a test of the functions output
+
+
+## Installation
+
+Follow the steps below to install this package on you system.
+
+1. Install the ```devtools``` package.
+2. Install and load the ```FARS.functions``` package:
+  - install_github("lahstorti/FARS.functions")
+  - library("FARS.functions")
+
+
+
+## Raw Data
+
+This package contains a raw data file. To access this data you can use this lines of code:
+

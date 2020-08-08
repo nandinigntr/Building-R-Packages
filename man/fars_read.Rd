@@ -2,33 +2,42 @@
 % Please edit documentation in R/fars_functions.R
 \name{fars_read}
 \alias{fars_read}
-\title{Read in data from a csv file
-  ## A note from the author:
-  ### Please leave feedback where appropriate.}
-  \usage{
-    fars_read(filename)
-  }
-  \arguments{
-    \item{filename}{a character vector of filename of a csv file to read}
-  }
-  \value{
-    this function returns a dataframe of the data read in from a csv file
-  }
-  \description{
-    \code{fars_read} returns a data.frame with data from the supplised csv file.
-  }
-  \details{
-    The function takes a character vector of a path of a filename to read into R.
-    If the filename does not exist the function will stop and an error will be thrown.
-  }
-  \note{
-    fars_read depends on read_csv and tbl_df from the readr and dplyr packages respectively
-  }
-  \examples{
-    \dontrun{
-      fars_read("data/filename.csv")
-    }
+\title{Read data from csv file}
+\usage{
+fars_read(filename)
+}
+\arguments{
+\item{filename}{A character string containing the name of the csv file to be read,
+which must be at the CURRENT directory.}
+}
+\value{
+If the file exists, this function returns a data frame table. If the file doesn't
+   exist it raises an error message.
+}
+\description{
+\code{fars_read} is a function that reads data from a csv file in the CURRENT working
+directory and returns it as an object of the "tbl_df" class.
+}
+\details{
+The progress is not shown while the file is being read and all messages are
+   omitted. This function uses the \code{read_csv()} function from the \code{readr}
+   package. After reading the data from the csv file, the \code{tbl_df()} function
+   from the \code{dplyr} package is called to convert the data into the tbl_df format
+   before returing it.
+}
+\note{
+\itemize{
+   \item If the file does not exist in the current directory, this function stops
+   execution with an error message.
 
+   \item This functions is exported (users will have direct access to the funciton when
+   they load the package containing this function).
+   }
+}
+\examples{
+\dontrun{
+fars_read("accident_2014.csv.bz2") # file in current working directory
+fars_read("data123.csv") # Error: file 'data123.csv' does not exist.
+}
 
-  }
-
+}

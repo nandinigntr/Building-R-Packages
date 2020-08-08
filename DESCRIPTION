@@ -1,15 +1,22 @@
-Package: TestPackage
+Package: MyFirstPackage
 Type: Package
-Title: Building R Package Assignment
+Title: Assignment for Building R Packages
 Version: 0.1.0
-Author: Nandini Guntur <nandinigntr4@gmail.com>
+Author: Nandini Guntur
 Maintainer: Nandini Guntur <nandinigntr4@gmail.com>
-Description: Functions to interact with data from the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System
-License: GPL
+Description: This package contains functions to map the data from the US National Highway 
+             Traffic Safety Administration's Fatality Analysis Reporting System (FARS).
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
-Depends: R (>3.3.1)
-RoxygenNote: 6.0.1
-Depends: dplyr,readr,graphics,maps,tidyr
-Suggests: knitr, markdown, testhat
+RoxygenNote: 7.1.1
+Suggests: knitr,
+          rmarkdown
 VignetteBuilder: knitr
+Imports: devtools,
+         readr,
+         dplyr,
+         tidyr,
+         maps,
+         graphics,
+         testthat

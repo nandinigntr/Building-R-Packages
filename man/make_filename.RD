@@ -2,31 +2,35 @@
 % Please edit documentation in R/fars_functions.R
 \name{make_filename}
 \alias{make_filename}
-\title{Creates a filename based on year input}
+\title{Generate the name of the file}
 \usage{
-  make_filename(year)
+make_filename(year)
 }
 \arguments{
-  \item{year}{The year to be in the name of the file.}
+\item{year}{An integer or string indicating the year that generate the data file.}
 }
 \value{
-  A character vector filename
+The name of the file as a string.
 }
 \description{
-  \code{make_filename} will create a character vector filename with an assocaited year input
+\code{make_filename} is a function that generates the file name of the csv file to be
+read.
 }
 \details{
-  This takes a year input and creates a filename with this year.
-  If the year is does not pass \code{as.integer} it will have a value of NA, and the function
-  will throw an error after being passed to sprintf.
+This function uses the year (input) to generate the file name for the Fatality
+   Analysis Reporting System (FARS) data file. It converts the year into an integer and
+   then uses the \code{sprintf()} function to format the file name.
 }
 \note{
-  This package does not depends on any extensions
+The \code{year} parameter of this function must be an integer or a string with
+   number. If \code{year} parameter is invalid, then an invalid file name will be generated
+   containing "NA" as the year in the file name which doesn't exist in the FARS database.
 }
 \examples{
-  \dontrun{
-    make_filename(2013)
-  }
-
+\dontrun{
+make_filename(2014) #generates "accident_2014.csv.bz2"
+make_filename("2015") #generates "accident_2015.csv.bz2"
+make_filename("abcd") #generates "accident_NA.csv.bz2"
+}
 
 }
